@@ -206,40 +206,8 @@ def load_el_growth_data():
 # ============================================================================
 
 def check_password():
-    if 'authenticated' not in st.session_state:
-        st.session_state.authenticated = False
-    if st.session_state.authenticated:
-        return True
-
-    st.markdown(f"""
-    <div style="text-align: center; padding: 60px 20px;">
-        <h1 style="color: {AR_RED}; font-size: 3rem; margin-bottom: 10px;">VERA-AR</h1>
-        <p style="color: #666; font-size: 1.1rem; margin-bottom: 40px;">
-            Verification Engine for Results &amp; Accountability<br>Arkansas Implementation
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        password = st.text_input("Enter access code:", type="password", key="pw")
-        if st.button("Access VERA-AR", use_container_width=True):
-            if password == APP_PASSWORD:
-                st.session_state.authenticated = True
-                st.rerun()
-            else:
-                st.error("Invalid access code")
-
-    st.markdown(f"""
-    <div style="text-align: center; margin-top: 60px; color: #999; font-size: 0.85rem;">
-        <p>VERA-AR analyzes ELPA21 domain data and ATLAS results across ~235 Arkansas districts.</p>
-        <p>~42,000 English Learners | ~8.5% statewide</p>
-        <p>Largest Marshallese diaspora outside the Marshall Islands (Springdale)</p>
-        <p>ELPA21 (not WIDA) | ATLAS (ACT-aligned) | LEARNS Act (2023)</p>
-        <p style="margin-top: 10px;">Contact: brian@h-edu.solutions</p>
-    </div>
-    """, unsafe_allow_html=True)
-    return False
+    st.session_state.authenticated = True
+    return True
 
 
 # ============================================================================
