@@ -28,7 +28,7 @@ import plotly.graph_objects as go
 # CONFIGURATION
 # ============================================================================
 
-APP_AR_RED = "#CC0000"
+AR_RED = "#CC0000"
 AR_WHITE = "#FFFFFF"
 AR_DARK = "#990000"
 AR_GRAY = "#4A4A4A"
